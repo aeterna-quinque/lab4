@@ -5,7 +5,6 @@ namespace Gauss
     public class Matrix
     {
         private float[,] large_matrix;
-        private float[,] matrix;
         private int x_number;
         private int lines_number;
 
@@ -15,8 +14,8 @@ namespace Gauss
             x_number = byte.Parse(Console.ReadLine());
             Console.Write("Введите количество строк: ");
             lines_number = byte.Parse(Console.ReadLine());
+            Console.Write('\n');
 
-            matrix = new float[lines_number, x_number];
             large_matrix = new float[lines_number, x_number + 1];
 
             Console.WriteLine("Введите коэффициенты при переменных");            
@@ -27,7 +26,6 @@ namespace Gauss
                 {
                     Console.Write("X{0} * ", j + 1);
                     large_matrix[i, j] = float.Parse(Console.ReadLine());
-                    matrix[i, j] = large_matrix[i, j];
                     if (j == (x_number - 1)) Console.Write('\n');
                 }
             }
@@ -37,25 +35,55 @@ namespace Gauss
             {
                 large_matrix[i, x_number] = float.Parse(Console.ReadLine());
             }
+            Console.Write('\n');
 
             MatrixOutput();
         }
 
         public void MatrixOutput()
         {
-            int i = 0;
-            foreach (int elem in large_matrix)
+            for (int i = 0; i < large_matrix.GetLength(0); i++)
             {
-                i++;
-                if (i % (x_number + 1) == 0) Console.Write($"| {elem}\n");
-                else Console.Write($"{elem} ");
+                for (int j = 0; j < large_matrix.GetLength(1); j++)
+                {
+                    if (j == large_matrix.GetLength(0))
+                        Console.Write("|\t");
+
+                    Console.Write("{0}\t", large_matrix[i, j]);
+
+                    if ((j == large_matrix.GetLength(1) - 1) 
+                        && (i != large_matrix.GetLength(0) - 1))
+                    {
+                        Console.Write('\n');
+                        for (int k = 0; k < x_number; k++)
+                            Console.Write('\t');
+                        Console.Write("|\n");
+                    }
+                }
             }
+            Console.WriteLine('\n');                
         }
 
-        public float[,] GetMatrix(bool large)
+        public void Answer()
         {
-            if (large) return large_matrix;
-            else return matrix;
+            float[,] M = large_matrix;
+            bool s = false;
+
+            float[] x = Gauss.Solve(M);
+
+            foreach (float elem in x)
+            {
+                if ((elem > float.MaxValue) || (elem < float.MinValue) || (elem == float.NaN))
+                    s = true;
+
+            }
+
+            if ((x != null) && (s == false)) 
+                for (int i = 0; i < x.Length; i++)
+                    Console.WriteLine($"X{i+1} = {x[i]}");
+
+            else
+                Console.WriteLine("Единственного решения системы нет.");
         }
     }
 }

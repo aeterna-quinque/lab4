@@ -4,3 +4,10 @@ C:\Users\Господин\Documents\GitHub\lab4\Gauss\Gauss\bin\Debug\Gauss.pdb
 C:\Users\Господин\Documents\GitHub\lab4\Gauss\Gauss\obj\Debug\Gauss.csproj.CoreCompileInputs.cache
 C:\Users\Господин\Documents\GitHub\lab4\Gauss\Gauss\obj\Debug\Gauss.exe
 C:\Users\Господин\Documents\GitHub\lab4\Gauss\Gauss\obj\Debug\Gauss.pdb
+C:\Users\user\Documents\GitHub\lab4\Gauss\Gauss\bin\Debug\Gauss.exe.config
+C:\Users\user\Documents\GitHub\lab4\Gauss\Gauss\bin\Debug\Gauss.exe
+C:\Users\user\Documents\GitHub\lab4\Gauss\Gauss\bin\Debug\Gauss.pdb
+C:\Users\user\Documents\GitHub\lab4\Gauss\Gauss\obj\Debug\Gauss.csprojAssemblyReference.cache
+C:\Users\user\Documents\GitHub\lab4\Gauss\Gauss\obj\Debug\Gauss.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\GitHub\lab4\Gauss\Gauss\obj\Debug\Gauss.exe
+C:\Users\user\Documents\GitHub\lab4\Gauss\Gauss\obj\Debug\Gauss.pdb

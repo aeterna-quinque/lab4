@@ -8,6 +8,7 @@ namespace Gauss
         {
             Matrix m1 = new Matrix();
             m1.MatrixInput();
+            m1.Answer();
         }
     }
 }
